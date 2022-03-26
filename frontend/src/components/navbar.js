@@ -1,7 +1,25 @@
 import "../styles/styles.css";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import i1 from "./images/house.png";
+import { Context } from "../App";
 function Navbarcustom() {
+  const { usernav, setUsernav } = useContext(Context);
+  useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem("username"));
+    const loggedIn = JSON.parse(localStorage.getItem("loggedin"));
+    if (loggedIn) {
+      // console.log("navname");
+      setUsernav(loggedInUser);
+      // setFullName(loggedInName);
+    }
+  }, [usernav]);
+
+  const logout = () => {
+    setUsernav(null);
+    console.log("cfguhvhjbn");
+    localStorage.setItem("loggedin", JSON.stringify(false));
+  };
   return (
     <>
       <nav className="bg-white shadow-lg">
@@ -45,13 +63,29 @@ function Navbarcustom() {
                 >
                   Contact Us
                 </Link> */}
-                <Link
-                  to="/sign-in"
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                  style={{ marginLeft: "750px" }}
-                >
-                  Login
-                </Link>
+                {usernav ? (
+                  <div>
+                    <Link
+                      to="/sign-in"
+                      className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                      style={{ marginLeft: "750px" }}
+                    >
+                      {usernav}
+                    </Link>
+                    <Link to="/" onClick={logout}>
+                      Logout
+                    </Link>
+                  </div>
+                ) : (
+                  <Link
+                    to="/sign-in"
+                    className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                    style={{ marginLeft: "750px" }}
+                  >
+                    Login
+                  </Link>
+                )}
+
                 {/* <Link
                   to="/sign-up"
                   className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
