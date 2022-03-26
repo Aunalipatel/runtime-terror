@@ -45,28 +45,42 @@ exports.postWorkerLogin = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
-exports.postAdminLogin = (req, res) => {
+exports.postAdminLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     console.log(email);
-    Admin.findOne({ email })
-      .then((admin) => {
-        //   if (!admin) {
-        //     return res.redirect("/login");
-        //   }
-        console.log(admin);
-        if (password === admin.password) {
-          // req.session.isLoggedIn = true;
-          // req.session.admin = admin;
-          return req.session.save((err) => {
-            console.log(err);
-            return res.redirect("/");
-          });
-        }
-        res.redirect("/");
-      })
-      .catch((err) => console.log(err));
+    console.log(password);
+    const admin = await Admin.find({ email, password });
+    console.log(admin);
+    console.log("test");
+    // try {
+    //   const admin = await Admin.find({ email, password });
+
+    //   console.log(admin);
+    //   console.log("x");
+    // } catch (error) {
+    //   console.log("ljklk");
+    // }
+    if (admin.length === 0) {
+      return res.status(200).json({
+        success: false,
+      });
+    } else if (password === admin[0].password) {
+      // console.log("IFFFFFFFFFFFf");
+      // return (res.data.success = true);
+      return res.status(200).json({
+        success: true,
+        info: admin,
+      });
+    } else {
+      return res.status(200).json({
+        success: false,
+      });
+    }
+    res.redirect("/");
+    // })
+    // .catch((err) => console.log(err));
   } catch (error) {
     console.log(error);
   }

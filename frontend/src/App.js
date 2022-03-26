@@ -1,6 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useContext, createContext, useState } from "react";
 import Homepage from "./components/homepage.js";
 // import Navbarcustom from "./components/navbar";
 import AdminDashboard from "./components/AdminDashboard.js";
@@ -15,24 +16,28 @@ import Profile from "./components/Profile";
 // C:\Users\adity\Documents\GitHub\codeshastra_unof\frontend\src\App.js
 // import Login from "./components/Login.js";
 // this is a demo change
+export const Context = createContext();
 function App() {
+  const [usernav, setUsernav] = useState(null);
   return (
-    <div className="App">
-      <Router>
-        <Navbarcustom />
-        <Switch>
-          <Route path="/" exact component={Homepage} />
-          <Route path="/sign-in" component={Login} />
-          <Route path="/admin-signin" component={SignUp} />
-          {/* <Route path="/login" exact component={Login} /> */}
-          <Route path="/admin" exact component={AdminDashboard} />
-          <Route path="/worker" exact component={Worker} />
-          <Route path="/employee_details" component={E_details} />
-          <Route path="/attendance" exact component={Attendance} />
-          <Route path="/worker/profile" exact component={Profile} />
-        </Switch>
-      </Router>
-    </div>
+    <Context.Provider value={{ usernav, setUsernav }}>
+      <div className="App">
+        <Router>
+          <Navbarcustom />
+          <Switch>
+            <Route path="/" exact component={Homepage} />
+            <Route path="/sign-in" component={Login} />
+            <Route path="/admin-signin" component={SignUp} />
+            {/* <Route path="/login" exact component={Login} /> */}
+            <Route path="/admin" exact component={AdminDashboard} />
+            <Route path="/worker" exact component={Worker} />
+            <Route path="/employee_details" component={E_details} />
+            <Route path="/attendance" exact component={Attendance} />
+            <Route path="/worker/profile" exact component={Profile} />
+          </Switch>
+        </Router>
+      </div>
+    </Context.Provider>
   );
 }
 
