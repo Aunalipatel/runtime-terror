@@ -18,7 +18,14 @@ const store = new MongoDBStore({
   collection: "sessions",
 });
 
+const cors=require("cors")
+
+app.use(cors({
+  origin:"http://localhost:3000"
+}))
+
 const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -56,6 +63,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/admin", adminRoutes);
 
 mongoose
   .connect(MONGODB_URI)
