@@ -57,8 +57,8 @@ exports.postAdminLogin = (req, res) => {
         //   }
         console.log(admin);
         if (password === admin.password) {
-          req.session.isLoggedIn = true;
-          req.session.admin = admin;
+          // req.session.isLoggedIn = true;
+          // req.session.admin = admin;
           return req.session.save((err) => {
             console.log(err);
             return res.redirect("/");
