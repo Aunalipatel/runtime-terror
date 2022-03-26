@@ -18,14 +18,12 @@ const store = new MongoDBStore({
   collection: "sessions",
 });
 
-<<<<<<< HEAD
 const cors=require("cors")
 
 app.use(cors({
   origin:"http://localhost:3000"
 }))
 
-=======
 const cors = require("cors");
 
 app.use(
@@ -33,7 +31,6 @@ app.use(
     origin: "http://localhost:3000",
   })
 );
->>>>>>> 2f68ca607d705c6f2cdbdf6d68c8a6262d4658be
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
 

@@ -20,19 +20,19 @@ import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
 export default class E_details extends Component {
   render() {
-    const [list, setList] = useState([]);
-    const changeStatus = async (e) =>{
-      let id = e.target.id;
-      await axios.post("http://localhost:8080/admin/addWorker", { id: id })
-                .then(async (res) => {
-                    if (res.data) {
-                        await axios.get("http://localhost:8080/workers")
-                            .then(res => {
-                                console.log(res.data)
-                                setList(res.data);
-                            })
-                            .catch(err => { console.log(err) })
-    }
+    // const [list, setList] = useState([]);
+    // const changeStatus = async (e) =>{
+    //   let id = e.target.id;
+    //   await axios.post("http://localhost:8080/admin/addWorker", { id: id })
+    //             .then(async (res) => {
+    //                 if (res.data) {
+    //                     await axios.get("http://localhost:8080/workers")
+    //                         .then(res => {
+    //                             console.log(res.data)
+    //                             setList(res.data);
+    //                         })
+    //                         .catch(err => { console.log(err) })
+    // }
     return (
       <div className="bg-gray-200">
         <div className="flex">
@@ -233,7 +233,7 @@ export default class E_details extends Component {
                     <button
                       type="submit"
                       className="btn btn-dark btn-lg btn-block"
-                      onClick={changeStatus}
+                      // onClick={changeStatus}
                     >
                       Done
                     </button>
