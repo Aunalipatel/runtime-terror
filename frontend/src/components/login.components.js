@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-// import "./1.css";
+// import "./1.css"; C:\Users\adity\Documents\GitHub\runtime-terror\frontend\src\components\login.components.js
 
 export default function Login() {
   const [email, setEmail] = useState("");
