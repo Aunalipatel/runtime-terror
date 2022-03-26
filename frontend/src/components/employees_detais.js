@@ -20,6 +20,19 @@ import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
 export default class E_details extends Component {
   render() {
+    // const [list, setList] = useState([]);
+    // const changeStatus = async (e) =>{
+    //   let id = e.target.id;
+    //   await axios.post("http://localhost:8080/admin/addWorker", { id: id })
+    //             .then(async (res) => {
+    //                 if (res.data) {
+    //                     await axios.get("http://localhost:8080/workers")
+    //                         .then(res => {
+    //                             console.log(res.data)
+    //                             setList(res.data);
+    //                         })
+    //                         .catch(err => { console.log(err) })
+    // }
     return (
       <div className="bg-gray-200">
         <div className="flex">
@@ -145,7 +158,7 @@ export default class E_details extends Component {
                   <form className="inner">
                     <h3 className="h3">Employee Details</h3>
                     <div className="form-group">
-                      <label>FullName:</label>
+                      <label>Emp_name:</label>
                       <input
                         type="text"
                         className="form-control"
@@ -154,7 +167,7 @@ export default class E_details extends Component {
                     </div>
                     <br />
                     <div className="form-group">
-                      <label>Employee_ID:</label>
+                      <label>Title:</label>
                       <input
                         type="text"
                         className="form-control"
@@ -163,7 +176,7 @@ export default class E_details extends Component {
                     </div>
                     <br />
                     <div className="form-group">
-                      <label>Wages:</label>
+                      <label>Text_block:</label>
                       <input
                         type="text"
                         className="form-control"
@@ -172,7 +185,7 @@ export default class E_details extends Component {
                     </div>
                     <br />
                     <div className="form-group">
-                      <label>Email</label>
+                      <label>Email_ID:</label>
                       <input
                         type="email"
                         className="form-control"
@@ -181,7 +194,7 @@ export default class E_details extends Component {
                     </div>
                     <br />
                     <div className="form-group">
-                      <label>Mobile</label>
+                      <label>Mobile Number:</label>
                       <input
                         type="text"
                         className="form-control"
@@ -190,7 +203,7 @@ export default class E_details extends Component {
                     </div>
                     <br />
                     <div className="form-group">
-                      <label>Age</label>
+                      <label>Age:</label>
                       <input
                         type="text"
                         className="form-control"
@@ -199,7 +212,7 @@ export default class E_details extends Component {
                     </div>
                     <br />
                     <div className="form-group">
-                      <label>Address:</label>
+                      <label>Project_Loc:</label>
                       <input
                         type="text"
                         className="form-control"
@@ -220,6 +233,7 @@ export default class E_details extends Component {
                     <button
                       type="submit"
                       className="btn btn-dark btn-lg btn-block"
+                      // onClick={changeStatus}
                     >
                       Done
                     </button>

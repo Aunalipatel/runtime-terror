@@ -3,11 +3,31 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const workerSchema = new Schema({
-  name: {
+  Emp_name: {
+    type: String,
+    required: true,
+  },
+  Title: {
+    type: String,
+    required: true,
+  },
+  Text_block: {
     type: String,
     required: true,
   },
   email: {
+    type: String,
+    required: true,
+  },
+  Hour_W: {
+    type: Number,
+    required: true,
+  },
+  Rating: {
+    type: Number,
+    required: true,
+  },
+  Project_Loc: {
     type: String,
     required: true,
   },
@@ -22,20 +42,6 @@ const workerSchema = new Schema({
   aadhar: {
     type: Number,
     required: true,
-  },
-  insurance: {
-    insuranceId: {
-      type: Number,
-      required: true,
-    },
-    company: {
-      type: String,
-      required: true,
-    },
-    date: {
-      type: Date,
-      required: true,
-    },
   },
   adminId: {
     type: Schema.Types.ObjectId,

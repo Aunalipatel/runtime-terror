@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 // import Chart from 'react-chartjs-2';
 import apps from "./images1/images/apps.png";
 import campaign from "./images1/images/campaign.png";
@@ -18,8 +19,52 @@ import tasks from "./images1/images/tasks.png";
 import time from "./images1/images/time.png";
 import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
-function Attendance(){
-  return(
+function Attendance() {
+  const [list, setList] = useState([
+    {
+      Emp_name: "Aditya Ganji",
+      Emp_ID: 60004190007,
+      Hour_W: 100,
+      Rating: 4,
+      Project_Loc: "Andheri",
+    },
+    {
+      Emp_name: "Aunali Patel",
+      Emp_ID: 60004190016,
+      Hour_W: 90,
+      Rating: 4,
+      Project_Loc: "Andheri",
+    },
+    {
+      Emp_name: "Mayank Gohil",
+      Emp_ID: 60004190065,
+      Hour_W: 110,
+      Rating: 4,
+      Project_Loc: "Malad",
+    },
+    {
+      Emp_name: "Harsh Mengi",
+      Emp_ID: 60004190040,
+      Hour_W: 70,
+      Rating: 3.5,
+      Project_Loc: "Reasi",
+    },
+    {
+      Emp_name: "Jatin Abrol",
+      Emp_ID: 60004190049,
+      Hour_W: 75,
+      Rating: 4,
+      Project_Loc: "Reasi",
+    },
+    {
+      Emp_name: "Kunal Razdan",
+      Emp_ID: 60002190057,
+      Hour_W: 68,
+      Rating: 3.5,
+      Project_Loc: "Jammu",
+    },
+  ]);
+  return (
     <>
       <div className="bg-gray-200">
         <div className="flex">
@@ -48,21 +93,27 @@ function Attendance(){
               <div>
                 <img className="w-5 h-5" src={customers} alt="" />
               </div>
-              <div className="mx-3 text-sm text-gray-100"><Link to="/worker">Workers</Link></div>
+              <div className="mx-3 text-sm text-gray-100">
+                <Link to="/worker">Workers</Link>
+              </div>
             </div>
 
             <div className="flex m-5 mt-2">
               <div>
                 <img className="w-5 h-5" src={orders} alt="" />
               </div>
-              <div className="mx-3 text-sm text-gray-100"><Link to="/attendance">Attendance List Of Workers</Link></div>
+              <div className="mx-3 text-sm text-gray-100">
+                <Link to="/attendance">Attendance List Of Workers</Link>
+              </div>
             </div>
 
             <div className="flex m-5 mt-2">
               <div>
                 <img className="w-5 h-5" src={campaign} alt="" />
               </div>
-              <div className="mx-3 text-sm text-gray-100"><Link to="/employee_details">Add Worker</Link></div>
+              <div className="mx-3 text-sm text-gray-100">
+                <Link to="/employee_details">Add Worker</Link>
+              </div>
             </div>
 
             <div className="flex m-5 mt-2">
@@ -126,49 +177,66 @@ function Attendance(){
               </div>
             </div> */}
 
-            
-
             <div className="card-container flex m-7 space-x-6 ">
-             {/* <div className="bg-white w-1/3 p-4 divide-y divide-gray-200">
+              {/* <div className="bg-white w-1/3 p-4 divide-y divide-gray-200">
                         <div className="font-bold text-l pb-4">Top Countries</div>
                         <canvas className="pt-4" id="chart5"></canvas>
                     </div> */}
-                    <div className="bg-white w-8/8 p-4" style={{height: "1048px", width: "1200px"}}>
-                        {/* <div className="font-bold text-l pb-4">Attendance list of the Workers</div> */}
-                        <div className="flex bg-gray-100 text-gray-500 p-2 uppercase font-bold text-xs">
-                            <div className="w-1/3">
-                                <div>Employee Name</div>
-                            </div>
-                            <div className="w-3/4 flex space-x-20">
-                                <div>Employee ID</div>
-                                <div>Hours Worked This Month</div>
-                                <div>Rating(By 5)</div>
-                                <div>Project Location</div>
-                            </div>
+              <div
+                className="bg-white w-8/8 p-4"
+                style={{ height: "1048px", width: "1200px" }}
+              >
+                <div className="font-bold text-l pb-4">Top Channels</div>
+                <div className="flex bg-gray-100 text-gray-500 p-2 uppercase font-bold text-xs">
+                  <div className="w-1/3">
+                    <div>Employee Name</div>
+                  </div>
+                  <div className="w-3/4 flex space-x-20">
+                    <div>Employee ID</div>
+                    <div>Hours Worked This Month</div>
+                    <div>Rating(By 5)</div>
+                    <div>Project Location</div>
+                  </div>
+                </div>
+              <div className="multi-channel-container divide-y divide-gray-200">
+                {
+                 list.map((ord, idx) => {
+                  return (
+                    <>
+                      <div className="single-channel pt-2 pb-2">
+                    <div className="flex">
+                      <div className="w-1/3">
+                        <div className="image-text flex">
+                          <div>
+                            <img src={github} className="w-8 h-8" alt="" />
+                          </div>
+                          <div className="pl-2 pt-1">{ord.Emp_name}</div>
                         </div>
-    
-                        <div className="multi-channel-container divide-y divide-gray-200">
-                            <div className="single-channel pt-2 pb-2">
-                                <div className="flex">
-                                    <div className="w-1/3">
-                                        <div className="image-text flex">
-                                            <div>
-                                                <img src={github} className="w-8 h-8" alt=""/>
-                                            </div>
-                                            <div className="pl-2 pt-1">YouTube</div>
-                                        </div>
-                                    </div>
-                                    <div className="w-3/4 flex space-x-20">
-                                        <div style={{marginLeft: "1.5rem"}}>2.4k</div>
-                                        <div className="text-green-500" style={{marginLeft: "200px"}}>$16,000</div>
-                                        <div style={{marginLeft: "150px"}}>340</div>
-                                        <div className="text-blue-500" style={{marginLeft: "150px"}}>4.9%</div>
-                                    </div>
-                                </div>
-    
-                            </div>
-    
-                            <div className="single-channel pt-2 pb-2">
+                      </div>
+                      <div className="w-3/4 flex space-x-20">
+                        <div style={{ marginLeft: "1.5rem" }}>{ord.Emp_ID}</div>
+                        <div
+                          className="text-green-500"
+                          style={{ marginLeft: "200px" }}
+                        >
+                          {ord.Hour_W}
+                        </div>
+                        <div style={{ marginLeft: "150px" }}>{ord.Rating}</div>
+                        <div
+                          className="text-blue-500"
+                          style={{ marginLeft: "150px" }}
+                        >
+                          {ord.Project_Loc}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    </>
+                  );
+                })
+               }
+               </div>
+                  {/* <div className="single-channel pt-2 pb-2">
                                 <div className="flex">
                                     <div className="w-1/3">
                                         <div className="image-text flex">
@@ -266,9 +334,9 @@ function Attendance(){
                                     </div>
                                 </div>
     
-                            </div>
-                        </div>
-                    </div>
+                            </div> */}
+            
+              </div>
             </div>
           </div>
         </div>
