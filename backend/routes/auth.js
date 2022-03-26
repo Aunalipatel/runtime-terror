@@ -4,8 +4,8 @@ const authController = require("../controllers/auth");
 
 const router = express.Router();
 
-router.get("/workerLogin", authController.getWorkerLogin);
-router.get("/adminLogin", authController.getAdminLogin);
+// router.get("/workerLogin", authController.getWorkerLogin);
+// router.get("/adminLogin", authController.getAdminLogin);
 
 router.post("/workerLogin", authController.postWorkerLogin);
 router.post("/adminLogin", authController.postAdminLogin);
