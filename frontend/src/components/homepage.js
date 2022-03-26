@@ -68,7 +68,7 @@ function Homepage() {
         </div>
       </nav> */}
 
-      <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+      <main className="mt-8 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
         <div className="sm:text-center lg:text-left">
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
             <span className="block xl:inline">Premium Properties</span>
@@ -79,11 +79,16 @@ function Homepage() {
               Non-premium Prices
             </span>
           </h1>
-          <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+          <p className="mt-5 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
             At prime properties, we ensure that our clients get the best
             properties at affordable prices. Luxury is our priority and budget
             is our constrain. Pick and choose from 1000+ properties across the
             globe.
+          </p>
+          <br />
+          <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+            At prime properties, we ensure that our employees get the best
+            opportunities and are compensated very well.
           </p>
           {/* mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start */}
           {/* rounded-md shadow */}
@@ -121,9 +126,10 @@ function Homepage() {
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Orchid Villa</div>
             <p className="text-gray-700 text-base">
-              Located in the suburbs of california, orchid villa offers luxury
-              with a modern touch. Equipped with green lighting and a rainwater
-              harvesting system, this property is eco-friendly.
+              Located in california
+              <br />
+              Orchid villa offers luxury with a modern touch and is cuurently
+              halfway under construction.
             </p>
           </div>
           <div className="px-6 pt-4 pb-2">
@@ -153,9 +159,11 @@ function Homepage() {
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">577 Gracia</div>
             <p className="text-gray-700 text-base">
-              Located in the suburbs of california, orchid villa offers luxury
-              with a modern touch. Equipped with green lighting and a rainwater
-              harvesting system, this property is eco-friendly.
+              Located in Mumbai.
+              <br /> 577 Gracia offers luxury with a modern touch and is 25%
+              complete
+              <br /> Equipped with a rainwater harvesting system, this property
+              is eco-friendly.
             </p>
           </div>
           <div className="px-6 pt-4 pb-2">
@@ -185,9 +193,10 @@ function Homepage() {
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Nexa Epitome</div>
             <p className="text-gray-700 text-base">
-              Located in the suburbs of california, orchid villa offers luxury
-              with a modern touch. Equipped with green lighting and a rainwater
-              harvesting system, this property is eco-friendly.
+              Located in Pune
+              <br />
+              Nexa Epitome is equipped with beautiful lighting and is 80%
+              complete.
             </p>
           </div>
           <div className="px-6 pt-4 pb-2">
@@ -229,7 +238,7 @@ function Homepage() {
           </h3>
 
           <button className="bg-transparent text-white border-2 font-bold rounded-1xl py-4 px-8 shadow-lg uppercase tracking-wider">
-            Explore Locations
+            See Completed Projects
           </button>
         </div>
       </div>

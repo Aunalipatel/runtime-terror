@@ -15,9 +15,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#employee-form {
+  background-image: url('components/images/chicago.jpg');
 }
 
 #login-form {
