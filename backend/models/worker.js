@@ -12,20 +12,20 @@ const workerSchema = new Schema({
     required: true,
   },
   number: {
-    type: int,
+    type: Number,
     required: true,
   },
   age: {
-    type: int,
+    type: Number,
     required: true,
   },
   aadhar: {
-    type: int,
+    type: Number,
     required: true,
   },
   insurance: {
     insuranceId: {
-      type: int,
+      type: Number,
       required: true,
     },
     company: {
@@ -33,9 +33,14 @@ const workerSchema = new Schema({
       required: true,
     },
     date: {
-      type: date,
+      type: Date,
       required: true,
     },
+  },
+  adminId: {
+    type: Schema.Types.ObjectId,
+    ref: "Admin",
+    required: true,
   },
 });
 
