@@ -60,6 +60,6 @@ app.use("/auth", authRoutes);
 mongoose
   .connect(MONGODB_URI)
   .then((result) => {
-    app.listen(3001);
+    app.listen(8080);
   })
   .catch((err) => console.log(err));

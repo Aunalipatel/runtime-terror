@@ -1,7 +1,8 @@
 import React, { Component, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from axios ;
+import axios from "axios";
 // import "./1.css";
 
 export default function Login() {
@@ -11,16 +12,15 @@ export default function Login() {
     if (email.length >= 5 && email.includes("@") && password.length >= 5) {
       axios
         .post("/auth/workerLogin", {
-          username: email,
-          password: password,
+          email,
+          password,
         })
         .then((response) => {
           // console.log(response.data.data);
           if (response.data.success) {
-            
             localStorage.setItem("user", JSON.stringify(response.data.data));
             localStorage.setItem("name", JSON.stringify(response.data.name));
-            alert("logged in");
+            console.log("logged in");
           } else {
             alert("error");
           }
@@ -54,18 +54,17 @@ export default function Login() {
           />
         </div>
         <br />
-        <button
-          onCLick={emailLogin}
-          type="submit"
-          className="btn btn-dark btn-lg btn-block"
-        >
-          Login
-        </button>
+        <Link to="/#">
+          <button
+            onClick={emailLogin}
+            // type="submit"
+            className="btn btn-dark btn-lg btn-block"
+          >
+            Login
+          </button>
+        </Link>
         <p className="forgot-password text-right">
-          Are you an{" "}
-          <a href="/admin-signin" target="blank">
-            Admin?
-          </a>
+          Are you an <a href="/admin-signin">Admin?</a>
         </p>
         <br />
       </form>

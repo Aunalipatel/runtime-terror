@@ -46,26 +46,30 @@ exports.postWorkerLogin = (req, res, next) => {
 };
 
 exports.postAdminLogin = (req, res) => {
-  const { email, password } = req.body;
-  console.log(req.body);
-  console.log(email);
-  Admin.findOne({ email })
-    .then((admin) => {
-      //   if (!admin) {
-      //     return res.redirect("/login");
-      //   }
-      console.log(admin);
-      if (password === admin.password) {
-        req.session.isLoggedIn = true;
-        req.session.admin = admin;
-        return req.session.save((err) => {
-          console.log(err);
-          return res.redirect("/");
-        });
-      }
-      res.redirect("/");
-    })
-    .catch((err) => console.log(err));
+  try {
+    const { email, password } = req.body;
+    console.log(req.body);
+    console.log(email);
+    Admin.findOne({ email })
+      .then((admin) => {
+        //   if (!admin) {
+        //     return res.redirect("/login");
+        //   }
+        console.log(admin);
+        if (password === admin.password) {
+          req.session.isLoggedIn = true;
+          req.session.admin = admin;
+          return req.session.save((err) => {
+            console.log(err);
+            return res.redirect("/");
+          });
+        }
+        res.redirect("/");
+      })
+      .catch((err) => console.log(err));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 exports.postLogout = (req, res, next) => {
