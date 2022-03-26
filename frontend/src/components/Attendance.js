@@ -92,10 +92,10 @@ function Attendance(){
               <div className="bg-white px-2 py-0.5 h-18 flex">
                 <div className="left md:w-3/4 sm:w-1/3 flex p-3">
                   <img src={person} className="w-10 h-10" alt="" />
-                  <span className="block p-2">Admin</span>
+                  <span className="block p-2">Attendance List of Workers:</span>
                 </div>
                 <div className="right md:w-1/4 sm:w-2/3 flex ">
-                  <img
+                  {/* <img
                     src={search}
                     className="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4"
                     alt=""
@@ -112,7 +112,7 @@ function Attendance(){
                   />
                   <a href="#" className="mt-4 mx-2 text-indigo-500">
                     Logout
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@ function Attendance(){
                         <canvas className="pt-4" id="chart5"></canvas>
                     </div> */}
                     <div className="bg-white w-8/8 p-4" style={{height: "1048px", width: "1200px"}}>
-                        <div className="font-bold text-l pb-4">Top Channels</div>
+                        {/* <div className="font-bold text-l pb-4">Attendance list of the Workers</div> */}
                         <div className="flex bg-gray-100 text-gray-500 p-2 uppercase font-bold text-xs">
                             <div className="w-1/3">
                                 <div>Employee Name</div>

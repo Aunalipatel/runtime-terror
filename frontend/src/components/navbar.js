@@ -28,7 +28,7 @@ function Navbarcustom() {
                   Home
                 </Link>
                 <Link
-                  to="/admin"
+                  to="/worker"
                   className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
                 >
                   Services
@@ -48,7 +48,7 @@ function Navbarcustom() {
                 <Link
                   to="/sign-in"
                   className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                  style={{ marginLeft: "750px" }}
+                  // style={{ marginLeft: "750px" }}
                 >
                   Login
                 </Link>
