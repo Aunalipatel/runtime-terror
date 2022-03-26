@@ -223,7 +223,7 @@ function AdminDashboard(){
                     <div>
                         <img className="w-5 h-5" src={customers} alt=""/>
                     </div>
-                    <div className="mx-3 text-sm text-gray-100">Customers</div>
+                    <div className="mx-3 text-sm text-gray-100"><Link to="/worker">Workers</Link></div>
                 </div>
     
     
@@ -231,7 +231,7 @@ function AdminDashboard(){
                     <div>
                         <img className="w-5 h-5" src={orders} alt=""/>
                     </div>
-                    <div className="mx-3 text-sm text-gray-100">Orders</div>
+                    <div className="mx-3 text-sm text-gray-100"><Link to="/attendance">Attendance List Of Workers</Link></div>
                 </div>
     
     
@@ -239,7 +239,7 @@ function AdminDashboard(){
                     <div>
                         <img className="w-5 h-5" src={campaign} alt=""/>
                     </div>
-                    <div className="mx-3 text-sm text-gray-100">Campaigns</div>
+                    <div className="mx-3 text-sm text-gray-100"><Link to="/employee_details">Add Worker</Link></div>
                 </div>
     
     

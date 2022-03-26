@@ -8,6 +8,9 @@ import Login from "./components/login.components";
 import SignUp from "./components/signup.components";
 import Navbarcustom from "./components/navbar";
 import E_details from "./components/employees_detais";
+import Worker from "./components/Worker";
+import Attendance from "./components/Attendance";
+import Profile from "./components/Profile";
 // import AdminDashboard from "./components/AdminDashboard.js";
 // C:\Users\adity\Documents\GitHub\codeshastra_unof\frontend\src\App.js
 // import Login from "./components/Login.js";
@@ -23,7 +26,10 @@ function App() {
           <Route path="/admin-signin" component={SignUp} />
           {/* <Route path="/login" exact component={Login} /> */}
           <Route path="/admin" exact component={AdminDashboard} />
+          <Route path="/worker" exact component={Worker} />
           <Route path="/employee_details" component={E_details} />
+          <Route path="/attendance" exact component={Attendance} />
+          <Route path="/worker/profile" exact component={Profile} />
         </Switch>
       </Router>
     </div>
