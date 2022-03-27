@@ -87,7 +87,7 @@ function Worker() {
           <div className="bg-indigo-900 w-64 ">
             <div className=" bg-indigo-800">
               <div className="p-5 text-xl text-gray-200 uppercase font-bold">
-                MAJA CORP
+                MAAJ CORP
               </div>
             </div>
             <div>
