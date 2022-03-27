@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/styles.css';
 import { Link } from "react-router-dom";
-import {Chart} from 'chart.js';
+// import Chart from 'react-chartjs-2';
 import apps from "./images1/images/apps.png";
 import campaign from "./images1/images/campaign.png";
 import customers from "./images1/images/customers.png";
@@ -18,7 +18,7 @@ import tasks from "./images1/images/tasks.png";
 import time from "./images1/images/time.png";
 import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
-function AdminDashboard(){
+function WorkerDashboard(){
     // var ctx = document.getElementById('chart1').getContext('2d');
     //         var ctx2 = document.getElementById('chart2').getContext('2d');
     //         var ctx3 = document.getElementById('chart3').getContext('2d');
@@ -203,8 +203,8 @@ function AdminDashboard(){
     return(
      <div className="bg-gray-200">
         <div className="flex">
-            <div className="bg-indigo-900 w-64 ">
-                <div className=" bg-indigo-800">
+            <div className="bg-yellow-400 w-64 ">
+                <div className=" bg-yellow-500">
                     <div className="p-5 text-xl text-gray-200 uppercase font-bold">super corp</div>
                 </div>
                 <div>
@@ -271,7 +271,7 @@ function AdminDashboard(){
                     <div className="bg-white px-2 py-0.5 h-18 flex">
                         <div className="left md:w-3/4 sm:w-1/3 flex p-3">
                             <img src={person} className="w-10 h-10" alt=""/>
-                            <span className="block p-2">Admin</span>
+                            <span className="block p-2">Worker</span>
                         </div>
                         <div className="right md:w-1/4 sm:w-2/3 flex ">
                             <img src={search} className="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4" alt=""/>
@@ -282,9 +282,9 @@ function AdminDashboard(){
                     </div>
                 </div>
 
-                <div className="bg-indigo-200 m-7 p-6">
-                    <div className="text-4xl text-gray-800 font-medium">Good Morning, Super Inc.👋</div>
-                    <div className="mt-4">These are the stats for today, have a good day</div>
+                <div className="bg-yellow-200 m-7 p-6">
+                    <div className="text-4xl text-gray-800 font-medium">Good Morning, Worker👋</div>
+                    <div className="mt-4">These are the stats for today, have a good day.</div>
                 </div>
     
                 <div className="card-container flex m-7 space-x-6 ">
@@ -294,7 +294,7 @@ function AdminDashboard(){
                         <div className="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
                         <span className="font-bold text-3xl">$25,647</span>
                         <span className="bg-green-500 text-white p-1 rounded-full text-sm font-bold align-text-top">+58%</span>
-                        <canvas></canvas>
+                        <canvas id="chart1"></canvas>
                     </div>
                     <div className="card w-1/2 bg-white p-4">
                         <div><img src={wallet} className="w-10 h-10" alt=""/></div>
@@ -302,7 +302,7 @@ function AdminDashboard(){
                         <div className="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
                         <span className="font-bold text-3xl">$25,647</span>
                         <span className="bg-red-500 text-white p-1 rounded-full text-sm font-bold align-text-top">-9%</span>
-                        <canvas></canvas>
+                        <canvas id="chart2"></canvas>
     
                     </div>
                 </div>
@@ -315,7 +315,7 @@ function AdminDashboard(){
                         <div className="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
                         <span className="font-bold text-3xl">$25,647</span>
                         <span className="bg-green-500 text-white p-1 rounded-full text-sm font-bold align-text-top">+58%</span>
-                        <canvas></canvas>
+                        <canvas id="chart3"></canvas>
                     </div>
                     <div className="card w-1/2 bg-white p-4">
                         <div><img src={wallet} className="w-10 h-10" alt=""/></div>
@@ -323,7 +323,7 @@ function AdminDashboard(){
                         <div className="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
                         <span className="font-bold text-3xl">$25,647</span>
                         <span className="bg-red-500 text-white p-1 rounded-full text-sm font-bold align-text-top">-9%</span>
-                        <canvas></canvas>
+                        <canvas id="chart4"></canvas>
     
                     </div>
                 </div>
@@ -331,7 +331,7 @@ function AdminDashboard(){
                 <div className="card-container flex m-7 space-x-6 ">
                     <div className="bg-white w-1/3 p-4 divide-y divide-gray-200">
                         <div className="font-bold text-l pb-4">Top Countries</div>
-                        <canvas className="pt-4"></canvas>
+                        <canvas className="pt-4" id="chart5"></canvas>
                     </div>
                     <div className="bg-white w-2/3 p-4">
                         <div className="font-bold text-l pb-4">Top Channels</div>
@@ -476,4 +476,4 @@ function AdminDashboard(){
     </div>
     );
 }
-export default AdminDashboard;
+export default WorkerDashboard;

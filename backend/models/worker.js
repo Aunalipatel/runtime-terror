@@ -42,12 +42,7 @@ const workerSchema = new Schema({
   aadhar: {
     type: Number,
     required: true,
-  },
-  adminId: {
-    type: Schema.Types.ObjectId,
-    ref: "Admin",
-    required: true,
-  },
+  }
 });
 
 module.exports = mongoose.model("Worker", workerSchema);

@@ -24,16 +24,11 @@ app.use(cors({
   origin:"http://localhost:3000"
 }))
 
-const cors = require("cors");
 
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-  })
-);
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
