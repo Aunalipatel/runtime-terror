@@ -32,9 +32,9 @@ function Navbarcustom() {
                   className="flex items-center py-4 px-2"
                   style={{ marginLeft: "-72px" }}
                 >
-                  <img src={i1} alt="Logo" className="h-8 w-8 mr-1" />
+                  <img src={i1} alt="Logo" className="h-8 w-8 mr-3" />
                   <span className="font-semibold text-gray-500 text-lg">
-                    Prime Builders
+                    MAAJ
                   </span>
                 </Link>
               </div>
@@ -45,24 +45,17 @@ function Navbarcustom() {
                 >
                   Home
                 </Link>
-                <Link
-                  to="/admin"
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                >
-                  Services
-                </Link>
-                {/* <Link
-                  href=""
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                >
-                  About
-                </Link>
-                <Link
-                  href=""
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                >
-                  Contact Us
-                </Link> */}
+                {usernav ? (
+                  <Link
+                    to="/worker"
+                    className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                  >
+                    Admin
+                  </Link>
+                ) : (
+                  ""
+                )}
+
                 {usernav ? (
                   <div>
                     <Link
@@ -72,7 +65,12 @@ function Navbarcustom() {
                     >
                       {usernav}
                     </Link>
-                    <Link to="/" onClick={logout}>
+                    <Link
+                      to="/"
+                      onClick={logout}
+                      className="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                      // style={{ marginLeft: "750px" }}
+                    >
                       Logout
                     </Link>
                   </div>

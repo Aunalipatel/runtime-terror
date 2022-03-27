@@ -71,12 +71,12 @@ function Homepage() {
       <main className="mt-8 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
         <div className="sm:text-center lg:text-left">
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-            <span className="block xl:inline">Premium Properties</span>
+            <span className="block xl:inline">BUILD A BETTER WAY</span>
             <span
-              className="block text-green-500 xl:inline"
+              className="block text-green-300 xl:inline"
               style={{ margin: "16px" }}
             >
-              Non-premium Prices
+              Architecturally Designed, Innovative and Custom build
             </span>
           </h1>
           <p className="mt-5 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
@@ -90,11 +90,11 @@ function Homepage() {
             At prime properties, we ensure that our employees get the best
             opportunities and are compensated very well.
           </p>
-          {/* mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start */}
-          {/* rounded-md shadow */}
+          mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start
+          rounded-md shadow
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div>
-              {/* <Link
+              <Link
                 href="#"
                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-500 hover:bg-green-600 md:py-4 md:text-lg md:px-10"
                 style={{marginTop:"16px"}}
@@ -108,16 +108,17 @@ function Homepage() {
                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 md:py-4 md:text-lg md:px-10"
               >
                 Explore Locations
-              </Link> */}
+              </Link>
             </div>
           </div>
         </div>
-      </main>
+      </main> 
 
-      <div className="flex mt-5 p-10 justify-center">
+      <div className="flex mt-5 p-10 justify-center" id="ongoing">
         <h2 className="text-3xl font-normal leading-normal mt-0 mb-2 text-gray-500">
           Ongoing Projects
         </h2>
+        <section id="ongoing"></section>
       </div>
 
       <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
@@ -223,7 +224,7 @@ function Homepage() {
         </div>
       </div>
 
-      <div
+      {/* <div
         className="py-20 h-screen bg-gray-500 "
         style={{
           backgroundImage: "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5))",
@@ -241,8 +242,8 @@ function Homepage() {
             See Completed Projects
           </button>
         </div>
-      </div>
-      <div className="flex justify-center mt-5 p-10">
+      </div> */}
+      {/* <div className="flex justify-center mt-5 p-10">
         <h2 className="text-3xl font-normal leading-normal mt-0 mb-2 text-gray-500">
           Locations
         </h2>
@@ -293,14 +294,14 @@ function Homepage() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div
         className="py-20"
         // style="background: linear-gradient(315deg, #D1FAE5 0%, #10B981 74%)"
         style={{ backgroundColor: "mediumaquamarine" }}
       >
-        <div className="container mx-auto px-6">
+        {/* <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-2 text-white">
             Save upto 50% on broker commisions
           </h2>
@@ -314,15 +315,15 @@ function Homepage() {
           <button className="bg-white font-bold rounded-2xl py-4 px-8 shadow-lg uppercase tracking-wider">
             Enquire
           </button>
-        </div>
+        </div> */}
       </div>
 
-      <div className="flex mt-5 p-10 justify-center">
+      {/* <div className="flex mt-5 p-10 justify-center">
         <h2 className="text-3xl font-medium text-gray-500">
           What clients say about us ?
         </h2>
-      </div>
-      <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+      </div> */}
+      {/* <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
         <div className="bg-white dark:bg-gray-800 w-72 shadow-lg mx-auto rounded-xl p-4">
           <p className="text-gray-600 dark:text-white">
             <span className="font-bold text-green-500 text-lg">“</span>
@@ -402,15 +403,15 @@ function Homepage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="flex mt-5 p-10 md:justify-center ">
+      {/* <div className="flex mt-5 p-10 md:justify-center ">
         <h2 className="text-3xl font-normal leading-normal mt-0 mb-2 text-gray-500">
           Contact us
         </h2>
-      </div>
+      </div> */}
 
-      <div className="mt-5 flex p-10 justify-center items-center bg-green-300 ">
+      {/* <div className="mt-5 flex p-10 justify-center items-center bg-green-300 ">
         <form className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -494,7 +495,7 @@ function Homepage() {
             <div className="md:w-2/3"></div>
           </div>
         </form>
-      </div>
+      </div> */}
       <footer className="pt-40 px-4 divide-y bg-coolGray-100 text-coolGray-800 ">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/3">

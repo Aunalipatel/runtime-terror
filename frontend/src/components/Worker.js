@@ -87,7 +87,7 @@ function Worker() {
           <div className="bg-indigo-900 w-64 ">
             <div className=" bg-indigo-800">
               <div className="p-5 text-xl text-gray-200 uppercase font-bold">
-                super corp
+                MAAJ CORP
               </div>
             </div>
             <div>
@@ -159,10 +159,10 @@ function Worker() {
               <div className="bg-white px-2 py-0.5 h-18 flex">
                 <div className="left md:w-3/4 sm:w-1/3 flex p-3">
                   <img src={person} className="w-10 h-10" alt="" />
-                  <span className="block p-2">Admin</span>
+                  <span className="block p-2">Workers</span>
                 </div>
                 <div className="right md:w-1/4 sm:w-2/3 flex ">
-                  <img
+                  {/* <img
                     src={search}
                     className="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4"
                     alt=""
@@ -176,10 +176,10 @@ function Worker() {
                     src={warning}
                     className="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4"
                     alt=""
-                  />
-                  <a href="#" className="mt-4 mx-2 text-indigo-500">
+                  /> */}
+                  {/* <a href="#" className="mt-4 mx-2 text-indigo-500">
                     Logout
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -335,7 +335,7 @@ function Worker() {
               </div>
             </div> */}
 
-            <div className="card-container flex m-7 space-x-6 ">
+            {/* <div className="card-container flex m-7 space-x-6 ">
               <div className="bg-white w-1/3 p-4 divide-y divide-gray-200">
                 <div className="font-bold text-l pb-4">Top Countries</div>
                 <canvas className="pt-4" id="chart5"></canvas>
@@ -470,7 +470,7 @@ function Worker() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
