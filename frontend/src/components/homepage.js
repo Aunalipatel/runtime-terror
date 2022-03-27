@@ -114,10 +114,11 @@ function Homepage() {
         </div>
       </main> 
 
-      <div className="flex mt-5 p-10 justify-center">
+      <div className="flex mt-5 p-10 justify-center" id="ongoing">
         <h2 className="text-3xl font-normal leading-normal mt-0 mb-2 text-gray-500">
           Ongoing Projects
         </h2>
+        <section id="ongoing"></section>
       </div>
 
       <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
