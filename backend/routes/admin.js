@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post("/addWorker", adminController.postAddWorker);
 // router.post("/adminLogin", authController.postAdminLogin);
-
+router.get("/workers",adminController.getWorkers)
 // router.post("/logout", authController.postLogout);
 
 module.exports = router;

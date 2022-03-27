@@ -90,11 +90,11 @@ function Homepage() {
             At prime properties, we ensure that our employees get the best
             opportunities and are compensated very well.
           </p>
-          {/* mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start */}
-          {/* rounded-md shadow */}
+          mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start
+          rounded-md shadow
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div>
-              {/* <Link
+              <Link
                 href="#"
                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-500 hover:bg-green-600 md:py-4 md:text-lg md:px-10"
                 style={{marginTop:"16px"}}
@@ -108,11 +108,11 @@ function Homepage() {
                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 md:py-4 md:text-lg md:px-10"
               >
                 Explore Locations
-              </Link> */}
+              </Link>
             </div>
           </div>
         </div>
-      </main>
+      </main> 
 
       <div className="flex mt-5 p-10 justify-center" id="ongoing">
         <h2 className="text-3xl font-normal leading-normal mt-0 mb-2 text-gray-500">

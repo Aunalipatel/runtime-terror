@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/styles.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 // import Chart from 'react-chartjs-2';
 import apps from "./images1/images/apps.png";
 import campaign from "./images1/images/campaign.png";
@@ -25,6 +27,59 @@ import time from "./images1/images/time.png";
 import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
 function Worker() {
+  const [list, setList] = useState([])
+  // {
+  //   Emp_name: "Aditya Ganji",
+  //   Title: "Worker 1",
+  //   Emp_ID: 60004190007,
+  //   Text_block: "Working at Andheri Railway Station(W)",
+  //   img: Aditya,
+  // },
+  // {
+  //   Emp_name: "Aunali Patel",
+  //   Title: "Worker 2",
+  //   Emp_ID: 60004190016,
+  //   Text_block: "Working at Lokhandwala,Andheri(W)",
+  //   img: Aunali,
+  // },
+  // {
+  //   Emp_name: "Mayank Gohil",
+  //   Title: "Worker 3",
+  //   Emp_ID: 60004190065,
+  //   Text_block: "Working at Malad Railway Station(W)",
+  //   img: Mayank,
+  // },
+  // {
+  //   Emp_name: "Harsh Mengi",
+  //   Title: "Worker 4",
+  //   Emp_ID: 60004190040,
+  //   Text_block: "Working at Reasi Railway Station(W)",
+  //   img: Harsh,
+  // },
+  // {
+  //   Emp_name: "Jatin Abrol",
+  //   Title: "Worker 5",
+  //   Emp_ID: 60004190049,
+  //   Text_block: "Working at Reasi Railway Station(W)",
+  //   img: Jatin,
+  // },
+  // {
+  //   Emp_name: "Kunal Razdan",
+  //   Title: "Worker 6",
+  //   Emp_ID: 60002190057,
+  //   Text_block: "Working at Jammu Railway Station(W)",
+  //   img: Kunal,
+  // },
+    useEffect(() => {
+      axios.get('http://localhost:8080/admin/workers')
+          .then(res => {
+              console.log(res);
+              setList(res.data);
+              console.log(list);
+              // setdisplayOrders(res.data.orders)
+          })
+          .catch(err => console.log(err))
+  }, [])
   return (
     <>
       <div className="bg-gray-200">
@@ -32,7 +87,7 @@ function Worker() {
           <div className="bg-indigo-900 w-64 ">
             <div className=" bg-indigo-800">
               <div className="p-5 text-xl text-gray-200 uppercase font-bold">
-                super corp
+                MAJA CORP
               </div>
             </div>
             <div>
@@ -54,21 +109,27 @@ function Worker() {
               <div>
                 <img className="w-5 h-5" src={customers} alt="" />
               </div>
-              <div className="mx-3 text-sm text-gray-100"><Link to="/worker">Workers</Link></div>
+              <div className="mx-3 text-sm text-gray-100">
+                <Link to="/worker">Workers</Link>
+              </div>
             </div>
 
             <div className="flex m-5 mt-2">
               <div>
                 <img className="w-5 h-5" src={orders} alt="" />
               </div>
-              <div className="mx-3 text-sm text-gray-100"><Link to="/attendance">Attendance List Of Workers</Link></div>
+              <div className="mx-3 text-sm text-gray-100">
+                <Link to="/attendance">Attendance List Of Workers</Link>
+              </div>
             </div>
 
             <div className="flex m-5 mt-2">
               <div>
                 <img className="w-5 h-5" src={campaign} alt="" />
               </div>
-              <div className="mx-3 text-sm text-gray-100"><Link to="/employee_details">Add Worker</Link></div>
+              <div className="mx-3 text-sm text-gray-100">
+                <Link to="/employee_details">Add Worker</Link>
+              </div>
             </div>
 
             <div className="flex m-5 mt-2">
@@ -98,10 +159,10 @@ function Worker() {
               <div className="bg-white px-2 py-0.5 h-18 flex">
                 <div className="left md:w-3/4 sm:w-1/3 flex p-3">
                   <img src={person} className="w-10 h-10" alt="" />
-                  <span className="block p-2">Admin</span>
+                  <span className="block p-2">Workers</span>
                 </div>
                 <div className="right md:w-1/4 sm:w-2/3 flex ">
-                  <img
+                  {/* <img
                     src={search}
                     className="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4"
                     alt=""
@@ -115,10 +176,10 @@ function Worker() {
                     src={warning}
                     className="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4"
                     alt=""
-                  />
-                  <a href="#" className="mt-4 mx-2 text-indigo-500">
+                  /> */}
+                  {/* <a href="#" className="mt-4 mx-2 text-indigo-500">
                     Logout
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -132,11 +193,42 @@ function Worker() {
               </div>
             </div> */}
 
-            <div className="card-container flex m-7 space-x-6 ">
-              <div className="card w-1/2 bg-white p-4">
-                <div>
-                  {/* <img src={wallet} className="w-10 h-10" alt="" /> */}
-                </div>
+            {/* <div className="card-container flex m-7 space-x-6 "> */}
+              {
+               list.map((ord, idx) => {
+                return (
+                  <>
+                <div className="card-container flex flex-row m-10 space-x-6 ">
+                  <div className="card w-1/3 bg-white p-4">
+                    <div
+                      className="font-bold text-xl text-gray-700"
+                      style={{ display: "flex" }}
+                    >
+                      {ord.Emp_name}{" "}
+                      <span style={{ marginLeft: "190px" }}>
+                        {/* <img src={ord.img} className="w-30 h-30" alt="" /> */}
+                      </span>
+                    </div>
+                    <div className="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">
+                      {ord.Title}
+                    </div>
+                    <div className="font-bold text-xl mb-2">{ord._id}</div>
+                    <p className="text-gray-700 text-base">{ord.Text_block}</p>
+                    <div
+                      className="px-6 pt-4 pb-10 "
+                      style={{ marginLeft: "-1.5rem" }}
+                    >
+                      <button className="bg-green-500 hover:bg-green-700 text-white font-bold  py-1 px-4 rounded-full">
+                        <Link to="/worker/profile">View Profile</Link>
+                      </button>
+                     </div>
+                    </div>
+                   </div>
+                  </>
+                );
+              })
+            }
+              {/* <div className="card w-1/2 bg-white p-4">
                 <span className="font-bold text-xl text-gray-700" style={{display: "flex"}}>
                   Aditya Ganji <span style={{marginLeft: "190px"}}><img src={Aditya} className="w-30 h-30" alt="" /></span>
                 </span>
@@ -186,10 +278,10 @@ function Worker() {
                   <Link to="/worker/profile">View Profile</Link>
                   </button>
                 </div>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
 
-            <div className="card-container flex m-7 space-x-6 ">
+            {/* <div className="card-container flex m-7 space-x-6 ">
               <div className="card w-1/2 bg-white p-4">
               <span className="font-bold text-xl text-gray-700" style={{display: "flex"}}>
                 Harsh Mengi <span style={{marginLeft: "190px"}}><img src={Harsh} className="w-30 h-30" alt="" /></span>
@@ -241,9 +333,9 @@ function Worker() {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="card-container flex m-7 space-x-6 ">
+            {/* <div className="card-container flex m-7 space-x-6 ">
               <div className="bg-white w-1/3 p-4 divide-y divide-gray-200">
                 <div className="font-bold text-l pb-4">Top Countries</div>
                 <canvas className="pt-4" id="chart5"></canvas>
@@ -378,7 +470,7 @@ function Worker() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

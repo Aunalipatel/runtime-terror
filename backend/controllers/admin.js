@@ -1,29 +1,43 @@
 const Worker = require("../models/worker");
 const Admin = require("../models/admin");
-const worker = require("../models/worker");
 
-exports.getAdminLogin = (req, res, next) => {
-  res.render("auth/signup", {
-    path: "/signup",
-    pageTitle: "Signup",
-  });
+exports.getWorkers = (req, res, next) => {
+  Worker.find().then(workers=>{
+    console.log(workers)
+    res.send(workers)
+  })
+  // res.render("auth/signup", {
+  //   path: "/signup",
+  //   pageTitle: "Signup",
+  // });
 };
 
 exports.postAddWorker = (req, res, next) => {
-    const name = req.body.name
+    const name = req.body.Emp_name
+    const title=req.body.Title
     const email = req.body.email;
     const number = req.body.number
     const age = req.body.age
     const aadhar=req.body.aadhar
+    const text=req.body.Text_block
+    const hours=req.body.Hours_W
+    const rating=req.body.Rating
+    const loc=req.body.Project_Loc
     const worker = new Worker({
-        name: name,
+        Emp_name: name,
+        Title:title,
         email: email,
         number: number,
         age: age,
         aadhar:aadhar,
-        adminId:req.session.admin._id,
+        Text_block:text,
+        Hours_W:hours,
+        Rating:rating,
+        Project_Loc:loc,
+        // adminId:req.session.admin._id,
     })
-    return worker.save()
+    worker.save()
+    return res.status(200).send({message: "Worker saved"})
 //   const password = req.body.password;
 //   Worker.findOne({ email: email })
 //     .then((worker) => {
