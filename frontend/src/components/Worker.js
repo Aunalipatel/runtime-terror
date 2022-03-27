@@ -28,50 +28,9 @@ import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
 function Worker() {
   const [list, setList] = useState([])
-  // {
-  //   Emp_name: "Aditya Ganji",
-  //   Title: "Worker 1",
-  //   Emp_ID: 60004190007,
-  //   Text_block: "Working at Andheri Railway Station(W)",
-  //   img: Aditya,
-  // },
-  // {
-  //   Emp_name: "Aunali Patel",
-  //   Title: "Worker 2",
-  //   Emp_ID: 60004190016,
-  //   Text_block: "Working at Lokhandwala,Andheri(W)",
-  //   img: Aunali,
-  // },
-  // {
-  //   Emp_name: "Mayank Gohil",
-  //   Title: "Worker 3",
-  //   Emp_ID: 60004190065,
-  //   Text_block: "Working at Malad Railway Station(W)",
-  //   img: Mayank,
-  // },
-  // {
-  //   Emp_name: "Harsh Mengi",
-  //   Title: "Worker 4",
-  //   Emp_ID: 60004190040,
-  //   Text_block: "Working at Reasi Railway Station(W)",
-  //   img: Harsh,
-  // },
-  // {
-  //   Emp_name: "Jatin Abrol",
-  //   Title: "Worker 5",
-  //   Emp_ID: 60004190049,
-  //   Text_block: "Working at Reasi Railway Station(W)",
-  //   img: Jatin,
-  // },
-  // {
-  //   Emp_name: "Kunal Razdan",
-  //   Title: "Worker 6",
-  //   Emp_ID: 60002190057,
-  //   Text_block: "Working at Jammu Railway Station(W)",
-  //   img: Kunal,
-  // },
+  
     useEffect(() => {
-      axios.get('http://localhost:8080/admin/workers')
+      axios.get('http://localhost:9000/admin')
           .then(res => {
               console.log(res);
               setList(res.data);
@@ -219,7 +178,7 @@ function Worker() {
                       style={{ marginLeft: "-1.5rem" }}
                     >
                       <button className="bg-green-500 hover:bg-green-700 text-white font-bold  py-1 px-4 rounded-full">
-                        <Link to="/worker/profile">View Profile</Link>
+                        <Link to="/worker/profile/:id">View Profile</Link>
                       </button>
                      </div>
                     </div>

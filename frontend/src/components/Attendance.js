@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/styles.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import axios from "axios";
 // import Chart from 'react-chartjs-2';
 import apps from "./images1/images/apps.png";
 import campaign from "./images1/images/campaign.png";
@@ -20,50 +21,17 @@ import time from "./images1/images/time.png";
 import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
 function Attendance() {
-  const [list, setList] = useState([
-    {
-      Emp_name: "Aditya Ganji",
-      Emp_ID: 60004190007,
-      Hour_W: 100,
-      Rating: 4,
-      Project_Loc: "Andheri",
-    },
-    {
-      Emp_name: "Aunali Patel",
-      Emp_ID: 60004190016,
-      Hour_W: 90,
-      Rating: 4,
-      Project_Loc: "Andheri",
-    },
-    {
-      Emp_name: "Mayank Gohil",
-      Emp_ID: 60004190065,
-      Hour_W: 110,
-      Rating: 4,
-      Project_Loc: "Malad",
-    },
-    {
-      Emp_name: "Harsh Mengi",
-      Emp_ID: 60004190040,
-      Hour_W: 70,
-      Rating: 3.5,
-      Project_Loc: "Reasi",
-    },
-    {
-      Emp_name: "Jatin Abrol",
-      Emp_ID: 60004190049,
-      Hour_W: 75,
-      Rating: 4,
-      Project_Loc: "Reasi",
-    },
-    {
-      Emp_name: "Kunal Razdan",
-      Emp_ID: 60002190057,
-      Hour_W: 68,
-      Rating: 3.5,
-      Project_Loc: "Jammu",
-    },
-  ]);
+  const [list, setList] = useState([]);
+  useEffect(() => {
+      axios.get('http://localhost:9000/admin')
+          .then(res => {
+              console.log(res);
+              setList(res.data);
+              console.log(list);
+              // setdisplayOrders(res.data.orders)
+          })
+          .catch(err => console.log(err))
+  }, [])
   return (
     <>
       <div className="bg-gray-200">

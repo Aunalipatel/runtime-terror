@@ -34,7 +34,7 @@ function App() {
             <Route path="/worker" exact component={Worker} />
             <Route path="/employee_details" component={E_details} />
             <Route path="/attendance" exact component={Attendance} />
-            <Route path="/worker/profile" exact component={Profile} />
+            <Route path="/worker/profile/:id" exact component={Profile} />
             <Route path="/workerd" exact component={WorkerDashboard} />
           </Switch>
         </Router>

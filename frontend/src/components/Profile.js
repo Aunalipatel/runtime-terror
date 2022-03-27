@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import "../styles/styles.css";
 import { Link } from "react-router-dom";
 // import Chart from 'react-chartjs-2';
+import { useState,useEffect } from "react";
+import axios from "axios";
 import apps from "./images1/images/apps.png";
 import campaign from "./images1/images/campaign.png";
 import customers from "./images1/images/customers.png";
@@ -18,7 +20,47 @@ import tasks from "./images1/images/tasks.png";
 import time from "./images1/images/time.png";
 import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
-function Profile() {
+class Profile extends Component{
+  constructor(props){
+    super(props);
+    this.state={
+      Emp_ID: null,
+      Emp_name: null,
+      Title: null,
+      Text_block: null,
+      email: null,
+      number: null,
+      age: null,
+      Project_Loc: null,
+      aadhar: null,
+      Hour_W: null,
+      Rating: null,
+      id:null
+    }
+}
+componentDidMount()
+{
+  fetch("http://localhost:9000/admin/"+this.props.match.params.id).then((resp)=>{
+      resp.json().then((result)=>{
+          this.setState({
+            Emp_ID: result.Emp_ID,
+            Emp_name: result.Emp_name,
+            Title: result.Title,
+            Text_block: result.Text_block,
+            email: result.email,
+            number: result.number,
+            age: result.age,
+            Project_Loc: result.Project_Loc,
+            aadhar: result.aadhar,
+            Hour_W: result.Hour_W,
+            Rating: result.Rating,
+            id:result.id
+          })
+      })
+  })
+}
+render(){
+
   return (
     <>
       <div className="bg-gray-200">
@@ -294,21 +336,22 @@ function Profile() {
                     </p>
                   </div>
                 </main> */}
+              
               <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5"></div>
                 <div className="rounded overflow-hidden shadow-lg">
-                  <img className="w-25" src={github} alt="" />
                   <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2">Orchid Villa</div>
+                    <div className="font-bold text-xl mb-2">{this.state.Emp_name}</div>
                     <p className="text-gray-700 text-base">
-                      Located in california
-                      <br />
-                      Orchid villa offers luxury with a modern touch and is
-                      cuurently halfway under construction.
+                       {this.state.Emp_ID}
+                    <br />
+                       {this.state.Text_block}
+                    <br />
+                       {this.state.Project_Loc}
                     </p>
                   </div>
                   <div className="px-6 pt-4 pb-2">
                     <span className="inline-block bg-white-200 rounded-full px-3 py-1 text-sm font-bold text-green-300 mr-2 mb-2">
-                      $ 12/hr
+                     
                     </span>
                   </div>
                 </div>
@@ -351,5 +394,6 @@ function Profile() {
       </main> */}
     </>
   );
+}
 }
 export default Profile;

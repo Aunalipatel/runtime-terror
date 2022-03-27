@@ -19,18 +19,18 @@ import tasks from "./images1/images/tasks.png";
 import time from "./images1/images/time.png";
 import wallet from "./images1/images/wallet.png";
 import warning from "./images1/images/warning.png";
-export default function E_details() {
-  const formRef = useRef(null);
-  const [name, setName] = useState();
-  const [title, setTitle] = useState();
-  const [text_b, setTextBlock] = useState();
-  const [email_i, setEmail] = useState();
-  const [age, setAge] = useState();
-  const [loc, setLoc] = useState();
-  const [aad, setAad] = useState();
-  const [no, setNumber] = useState();
-  const [rate, setRate] = useState();
-  const [hour, setHour] = useState();
+export default class E_details extends Component{
+  // const formRef = useRef(null);
+  // const [name, setName] = useState();
+  // const [title, setTitle] = useState();
+  // const [text_b, setTextBlock] = useState();
+  // const [email_i, setEmail] = useState();
+  // const [age, setAge] = useState();
+  // const [loc, setLoc] = useState();
+  // const [aad, setAad] = useState();
+  // const [no, setNumber] = useState();
+  // const [rate, setRate] = useState();
+  // const [hour, setHour] = useState();
 
   // const changeHandler = (event) => {
   //   if (event.target.id === "name") {
@@ -55,20 +55,24 @@ export default function E_details() {
   //     setRate(event.target.value);
   //   }
   // };
-  const [form1, setForm1] = useState({
-    Emp_name: "",
-    Title: "",
-    Text_block: "",
-    email: "",
-    number: "",
-    age: "",
-    Project_Loc: "",
-    aadhar: "",
-    Hour_W: "",
-    Rating: "",
-  });
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  constructor(){
+    super();
+    this.state={
+      Emp_ID: null,
+      Emp_name: null,
+      Title: null,
+      Text_block: null,
+      email: null,
+      number: null,
+      age: null,
+      Project_Loc: null,
+      aadhar: null,
+      Hour_W: null,
+      Rating: null
+    }
+ }
+ 
+  submitHandler(){
     // ("Emp_name", name)
     // ("Title", title)
     // ("Text_block", text_b)
@@ -80,43 +84,20 @@ export default function E_details() {
     // ("Hour_W",hour)
     // ("Rating", rate)
     // (formdata);
-    setForm1({
-      Emp_name: name,
-      Title: title,
-      Text_block: text_b,
-      email: email_i,
-      number: no,
-      age: age,
-      Project_Loc: loc,
-      aadhar: aad,
-      Hour_W: hour,
-      Rating: rate,
-    });
-    console.log(form1);
-    await axios
-      .post("http://localhost:8080/admin/addWorker", form1)
-      .then((res) => {
-        if (res.data) {
-          alert("Added successfully");
-          setForm1({
-            Emp_name: "",
-            Title: "",
-            Text_block: "",
-            email: "",
-            number: "",
-            age: "",
-            Project_Loc: "",
-            aadhar: "",
-            Hour_W: "",
-            Rating: "",
-          });
-        } 
-        else {
-          alert("Unsuccessful");
-        }
-      })
-      .catch((e) => console.log(e));
-  };
+    fetch("http://localhost:9000/admin",{
+            method:"Post",
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(this.state)
+        }).then((result)=>{
+            result.json().then((resp)=>{
+                alert("Worker has been added.")
+            })
+        })
+   }  
+ render()
+ {
   return (
     <div className="bg-gray-200">
       <div className="flex">
@@ -239,7 +220,7 @@ export default function E_details() {
               style={{ height: "1048px", width: "1200px" }}
             >
               <div id="login-form employee-form" className="outer">
-                <form className="inner">
+                <div className="inner">
                   <h3 className="h3">Employee Details</h3>
                   <div className="form-group">
                     <label>Emp_name:</label>
@@ -249,7 +230,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter fullname"
                       onChange={(e)=>{
-                        setName(e.target.value);
+                        this.setState({Emp_name:e.target.value})
                       }}
                     />
                   </div>
@@ -262,7 +243,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter fullname"
                       onChange={(e)=>{
-                        setTitle(e.target.value);
+                        this.setState({Title:e.target.value})
                       }}
                     />
                   </div>
@@ -275,7 +256,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter fullname"
                       onChange={(e)=>{
-                        setTextBlock(e.target.value);
+                        this.setState({Text_block:e.target.value})
                       }}
                     />
                   </div>
@@ -288,7 +269,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter email"
                       onChange={(e)=>{
-                        setEmail(e.target.value);
+                        this.setState({email:e.target.value})
                       }}
                     />
                   </div>
@@ -301,7 +282,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter phone"
                       onChange={(e)=>{
-                        setNumber(e.target.value);
+                        this.setState({number:e.target.value})
                       }}
                     />
                   </div>
@@ -314,7 +295,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter Age"
                       onChange={(e)=>{
-                        setAge(e.target.value);
+                        this.setState({age:e.target.value})
                       }}
                     />
                   </div>
@@ -327,7 +308,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter fullname"
                       onChange={(e)=>{
-                        setLoc(e.target.value);
+                        this.setState({Project_Loc:e.target.value})
                       }}
                     />
                   </div>
@@ -340,7 +321,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter Adhar number"
                       onChange={(e)=>{
-                        setAad(e.target.value);
+                        this.setState({aadhar:e.target.value})
                       }}
                     />
                   </div>
@@ -353,7 +334,7 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter Adhar number"
                       onChange={(e)=>{
-                        setHour(e.target.value);
+                        this.setState({Hour_W:e.target.value})
                       }}
                     />
                   </div>
@@ -366,7 +347,20 @@ export default function E_details() {
                       className="form-control"
                       placeholder="Enter Adhar number"
                       onChange={(e)=>{
-                        setRate(e.target.value);
+                        this.setState({Rating:e.target.value})
+                      }}
+                    />
+                  </div>
+                  <br />
+                  <div className="form-group">
+                    <label>Emp_ID(To be Alloted):</label>
+                    <input
+                      id="rating"
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter Adhar number"
+                      onChange={(e)=>{
+                        this.setState({Emp_ID:e.target.value})
                       }}
                     />
                   </div>
@@ -374,17 +368,19 @@ export default function E_details() {
                   <button
                     type="submit"
                     className="btn btn-dark btn-lg btn-block"
-                    onClick={submitHandler}
+                    onClick={()=>this.submitHandler()}
                   >
                     Done
                   </button>
                   <br />
-                </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+   
   );
+}
 }

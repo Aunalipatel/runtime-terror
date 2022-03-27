@@ -1,0 +1,102 @@
+{
+  "admin": [
+    {
+      "id": 1,
+      "Emp_name": "Aditya Ganji",
+      "Title": "Worker 1",
+      "Emp_ID": 60004190007,
+      "Text_block": "Working at Andheri Railway Station(W)",
+      "email": "adityaganji889@gmail.com",
+      "number": "9082195422",
+      "age": "20",
+      "Project_Loc": "Andheri",
+      "aadhar": "192392039099",
+      "Hour_W": "100",
+      "Rating": "4/5"
+    },
+    {
+      "id": 2,
+      "Emp_name": "Aunali Patel",
+      "Title": "Worker 2",
+      "Emp_ID": 60004190016,
+      "Text_block": "Working at Lokhandwala,Andheri(W)",
+      "email": "aunalipatel09@gmail.com",
+      "number": "8452888588",
+      "age": "20",
+      "Project_Loc": "Andheri",
+      "aadhar": "192392059099",
+      "Hour_W": "90",
+      "Rating": "4/5"
+    },
+    {
+      "id": 3,
+      "Emp_name": "Mayank Gohil",
+      "Title": "Worker 3",
+      "Emp_ID": 60004190065,
+      "Text_block": "Working at Malad Railway Station(W)",
+      "email": "mayankgohil99@gmail.com",
+      "number": "8104833952",
+      "age": "20",
+      "Project_Loc": "Malad",
+      "aadhar": "192391029099",
+      "Hour_W": "80",
+      "Rating": "4/5"
+    },
+    {
+      "id": 4,
+      "Emp_name": "Harsh Mengi",
+      "Title": "Worker 4",
+      "Emp_ID": 60004190040,
+      "Text_block": "Working at Reasi Railway Station(W)",
+      "email": "harshmengi007@gmail.com",
+      "number": "9149431214",
+      "age": "20",
+      "Project_Loc": "Reasi",
+      "aadhar": "192391129099",
+      "Hour_W": "80",
+      "Rating": "3.5/5"
+    },
+    {
+      "id": 5,
+      "Emp_name": "Jatin Abrol",
+      "Title": "Worker 5",
+      "Emp_ID": 60004190049,
+      "Text_block": "Working at Reasi Railway Station(W)",
+      "email": "jatinabrol09@gmail.com",
+      "number": "9149572871",
+      "age": "20",
+      "Project_Loc": "Reasi",
+      "aadhar": "192391139099",
+      "Hour_W": "90",
+      "Rating": "4/5"
+    },
+    {
+      "id": 6,
+      "Emp_name": "Kunal Razdan",
+      "Title": "Worker 6",
+      "Emp_ID": 60002190057,
+      "Text_block": "Working at Jammu Railway Station(W)",
+      "email": "kunalrazdan14@gmail.com",
+      "number": "8298298742",
+      "age": "20",
+      "Project_Loc": "Jammu",
+      "aadhar": "192391159099",
+      "Hour_W": "80",
+      "Rating": "3.5/5"
+    },
+    {
+      "Emp_ID": "60004190050",
+      "Emp_name": "Jay",
+      "Title": "Worker 7",
+      "Text_block": "Working at Matunga Railway Station (E)",
+      "email": "jay@gmail.com",
+      "number": "9876543210",
+      "age": "20",
+      "Project_Loc": "Matunga",
+      "aadhar": "123456789000",
+      "Hour_W": "75",
+      "Rating": "3.5/5",
+      "id": 7
+    }
+  ]
+}
